@@ -597,12 +597,12 @@ void consensus::dispatch_vote(bool leadership_transfer) {
         return;
     }
 
-    // if priority is to low, skip dispatching votes, do not take priority into
+    // if priority is too low, skip dispatching votes, do not take priority into
     // account when we transfer leadership
     if (current_priority_to_low && !leadership_transfer) {
         vlog(
           _ctxlog.trace,
-          "current node priority {} is to low, target priority {}",
+          "current node priority {} is too low, target priority {}",
           self_priority,
           _target_priority);
         arm_vote_timeout();
